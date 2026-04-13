@@ -1,0 +1,101 @@
+.steps {
+    background: #F8F9FA;
+}
+
+.steps__timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.step-card {
+    background: var(--brave-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-normal);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.step-card__number {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(251, 84, 43, 0.1);
+    line-height: 1;
+}
+
+.step-card__icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--brave-orange), var(--brave-magenta));
+    border-radius: 50%;
+    font-size: 1.75rem;
+    color: var(--brave-white);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 8px 20px rgba(251, 84, 43, 0.3);
+}
+
+.step-card__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--brave-dark);
+}
+
+.step-card__description {
+    font-size: 0.9rem;
+    color: var(--brave-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.step-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(52, 53, 70, 0.1);
+}
+
+.step-card__time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.875rem;
+    color: var(--brave-dark);
+    font-weight: 500;
+}
+
+.step-card__time svg {
+    color: var(--brave-orange);
+}
+
+.step-card__price {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--brave-orange);
+}
+
+.steps__cta {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .steps__timeline {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,100 @@
+.advantages {
+    background: var(--brave-white);
+}
+
+.advantages__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.advantage-card {
+    background: var(--brave-white);
+    border: 1px solid rgba(52, 53, 70, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--brave-gray);
+    transition: background var(--transition-normal);
+}
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: transparent;
+}
+
+.advantage-card:hover::before {
+    background: var(--brave-orange);
+}
+
+.advantage-card--featured {
+    background: linear-gradient(135deg, var(--brave-dark) 0%, var(--brave-dark-lighter) 100%);
+    color: var(--brave-white);
+}
+
+.advantage-card--featured .advantage-card__title,
+.advantage-card--featured .advantage-card__description {
+    color: var(--brave-white);
+}
+
+.advantage-card--featured::before {
+    background: var(--brave-orange);
+}
+
+.advantage-card__icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(251, 84, 43, 0.1);
+    border-radius: var(--radius-md);
+    font-size: 1.75rem;
+    color: var(--brave-orange);
+    margin-bottom: var(--spacing-lg);
+}
+
+.advantage-card--featured .advantage-card__icon {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--brave-orange);
+}
+
+.advantage-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--brave-dark);
+}
+
+.advantage-card--featured .advantage-card__title {
+    color: var(--brave-white);
+}
+
+.advantage-card__description {
+    font-size: 0.95rem;
+    color: var(--brave-gray);
+    line-height: 1.6;
+}
+
+.advantage-card--featured .advantage-card__description {
+    color: var(--brave-gray);
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .advantages__grid {
+        grid-template-columns: 1fr;
+    }
+}
